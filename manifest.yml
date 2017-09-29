@@ -1,0 +1,12 @@
+---
+applications:
+- name: cf-native-app
+  memory: 512M
+  instances: 1
+  host: cgshomeds
+  path: target/cf-native-app-0.0.1-SNAPSHOT.war
+  services:
+  - mariadb-datasource
+  - redis-session
+  domain: paasta.koscom.co.kr
+  buildpack: java_buildpack
