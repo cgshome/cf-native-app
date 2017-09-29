@@ -17,19 +17,14 @@ public class HomeController {
     @Autowired(required = false) RedisConnectionFactory redisConnectionFactory;
 
     @RequestMapping("/")
-    public String home(Model model) {
+    public String home(Model model, HttpSession session) {
         model.addAttribute("datasource", ParseUtil.toString(dataSource));
-        return "home";
-    }
-
-    @RequestMapping("/redis")
-    public String redis(Model model) {
         model.addAttribute("redis", ParseUtil.toString(redisConnectionFactory));
+        model.addAttribute("uid", getSession(session));
         return "home";
     }
 
-    @RequestMapping("/session")
-    public String hello(HttpSession session) {
+    private String getSession(HttpSession session) {
         UUID uid = (UUID) session.getAttribute("uid");
         if (uid == null) {
             uid = UUID.randomUUID();
