@@ -44,6 +44,8 @@ cf logs cf-native-app --recent
 git clone https://github.com/cgshome/cf-native-app
 cd cf-native-app
 ```
+- 로컬 mysql, redis 환경 설치: [Docker 기반 환경 구성 사례](local-env.md)
+
 - 실행
 ```
 mvn install
