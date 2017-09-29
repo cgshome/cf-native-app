@@ -20,11 +20,7 @@ public class CloudConfig extends AbstractCloudConfig {
     }
 
     @Bean
-    public RedisConnectionFactory redisConnectionFactory() {
-        CloudFactory cloudFactory = new CloudFactory();
-        Cloud cloud = cloudFactory.getCloud();
-        RedisServiceInfo redisServiceInfo = (RedisServiceInfo) cloud.getServiceInfo("redis-session");
-        return cloud.getServiceConnector(redisServiceInfo.getId(),
-                RedisConnectionFactory.class, null);
+    public RedisConnectionFactory redisConnection() {
+        return connectionFactory().redisConnectionFactory();
     }
 }
