@@ -24,7 +24,8 @@ applications:
   path: target/cf-native-app-0.0.1-SNAPSHOT.war
   buildpack: java_buildpack
   services:
-   - cf-datasource-db     # <-- 서비스 인스터스명 변경
+   - cf-datasource-db     # <-- mysql 서비스 인스터스명 변경
+   - cf-redis             # <-- redis 서비스 인스터스명 변경
 ```
 
 - 어플리케이션 배포
