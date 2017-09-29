@@ -9,7 +9,7 @@ cd cf-native-app
 
 - 서비스 인스턴스 생성
 ```
-cf create-service p-mysql 200mb mariadb-datasource  
+cf create-service p-mysql 200mb cf-datasource-db   
 ```
 
 - 설정 변경
@@ -24,7 +24,7 @@ applications:
   path: target/cf-native-app-0.0.1-SNAPSHOT.war
   buildpack: java_buildpack
   services:
-   - mariadb-datasource    # <-- 서비스 인스터스명 변경
+   - cf-datasource-db     # <-- 서비스 인스터스명 변경
 ```
 
 - 어플리케이션 배포
